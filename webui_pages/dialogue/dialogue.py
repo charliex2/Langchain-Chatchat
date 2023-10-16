@@ -11,7 +11,7 @@ from typing import List, Dict
 chat_box = ChatBox(
     assistant_avatar=os.path.join(
         "img",
-        "chatchat_icon_blue_square_v2.png"
+        "logo.png"
     )
 )
 
@@ -159,7 +159,7 @@ def dialogue_page(api: ApiRequest):
 
         elif dialogue_mode == "自定义Agent问答":
             chat_box.ai_say([
-                f"正在思考和寻找工具 ...",])
+                f"正在思考和寻找工具 ...", ])
             text = ""
             element_index = 0
             for d in api.agent_chat(prompt,

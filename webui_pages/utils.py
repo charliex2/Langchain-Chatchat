@@ -916,6 +916,12 @@ class ApiRequest:
             )
             return r.json()
 
+    def get_user_info(self, token):
+        # 添加 headers
+        self._client.headers.update({"Authorization": "Bearer " + token})
+        r = self.get("http://82.156.16.203/api/getInfo")
+        return r.json()
+
 
 def check_error_msg(data: Union[str, dict, list], key: str = "errorMsg") -> str:
     '''
